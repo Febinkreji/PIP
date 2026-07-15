@@ -1,0 +1,70 @@
+.ai-summary-card {
+  border-color: var(--ai-purple);
+}
+
+.ai-summary-card .rca-confidence-badge {
+  background: var(--ai-purple-bg);
+  color: var(--ai-purple);
+}
+
+.ai-summary-card .rca-confidence-bar-fill {
+  background: var(--ai-purple);
+}
+
+.ai-summary-card .rca-root-cause-card {
+  background: var(--ai-purple-bg);
+  border-color: var(--ai-purple);
+}
+
+.ai-summary-card .rca-root-cause-card h3 {
+  color: var(--ai-purple);
+}
+
+.ai-summary-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+  padding: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.ai-summary-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ai-summary-kpi-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.ai-summary-kpi-text {
+  font-size: 0.85rem;
+  color: var(--text-h);
+  line-height: 1.4;
+}
+
+.ai-summary-kpi-critical .ai-summary-kpi-value { color: var(--severity-critical); }
+.ai-summary-kpi-medium .ai-summary-kpi-value { color: var(--severity-medium); }
+.ai-summary-kpi-low .ai-summary-kpi-value { color: var(--severity-low); }
+
+.ai-summary-next-action {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+}
+
+.ai-summary-next-action-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}

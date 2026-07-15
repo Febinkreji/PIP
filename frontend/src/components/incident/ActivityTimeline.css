@@ -1,0 +1,129 @@
+.activity-timeline-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.activity-timeline-panel h2 {
+  margin-bottom: 16px;
+}
+
+.activity-timeline-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.activity-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.activity-timeline-step {
+  display: flex;
+  gap: 14px;
+  position: relative;
+  padding-bottom: 20px;
+  opacity: 0;
+  animation: activity-timeline-in 0.3s ease forwards;
+}
+
+.activity-timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+@keyframes activity-timeline-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.activity-timeline-marker {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+  position: relative;
+}
+
+.activity-timeline-step:not(:last-child) .activity-timeline-marker::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 4px;
+  width: 2px;
+  height: calc(100% + 12px);
+  background: var(--border);
+}
+
+.activity-timeline-marker-system { background: var(--text-muted); }
+.activity-timeline-marker-engineer { background: var(--accent); }
+.activity-timeline-marker-ai { background: var(--ai-purple); }
+.activity-timeline-marker-deployment { background: var(--severity-medium); }
+.activity-timeline-marker-infrastructure { background: var(--severity-high); }
+.activity-timeline-marker-database { background: var(--status-monitoring); }
+.activity-timeline-marker-network { background: var(--status-resolved); }
+
+.activity-timeline-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-timeline-step-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.activity-timeline-category {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.activity-timeline-category-system { color: var(--text-muted); background: color-mix(in srgb, var(--text-muted) 15%, transparent); }
+.activity-timeline-category-engineer { color: var(--accent); background: var(--accent-bg); }
+.activity-timeline-category-ai { color: var(--ai-purple); background: var(--ai-purple-bg); }
+.activity-timeline-category-deployment { color: var(--severity-medium); background: color-mix(in srgb, var(--severity-medium) 15%, transparent); }
+.activity-timeline-category-infrastructure { color: var(--severity-high); background: color-mix(in srgb, var(--severity-high) 15%, transparent); }
+.activity-timeline-category-database { color: var(--status-monitoring); background: color-mix(in srgb, var(--status-monitoring) 15%, transparent); }
+.activity-timeline-category-network { color: var(--status-resolved); background: color-mix(in srgb, var(--status-resolved) 15%, transparent); }
+
+.activity-timeline-action {
+  font-weight: 600;
+  color: var(--text-h);
+  font-size: 0.9rem;
+}
+
+.activity-timeline-time {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.activity-timeline-description {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.activity-timeline-user {
+  color: var(--text-muted);
+}
+
+.activity-timeline-duration {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
+}

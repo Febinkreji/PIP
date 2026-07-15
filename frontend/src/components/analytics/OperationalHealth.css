@@ -1,0 +1,112 @@
+.operational-health {
+  margin-bottom: 28px;
+}
+
+.operational-health-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .operational-health-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.operational-health-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.operational-health-card h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.gauge-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.gauge-value {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+}
+
+.service-status-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-status-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.service-status-dot-green {
+  background: var(--status-resolved);
+  box-shadow: 0 0 8px var(--status-resolved);
+}
+
+.service-status-dot-yellow {
+  background: var(--severity-medium);
+  box-shadow: 0 0 8px var(--severity-medium);
+}
+
+.service-status-dot-red {
+  background: var(--severity-critical);
+  box-shadow: 0 0 8px var(--severity-critical);
+}
+
+.service-status-label {
+  flex: 1;
+  color: var(--text-h);
+  font-size: 0.9rem;
+}
+
+.service-status-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.service-status-badge-green {
+  color: var(--status-resolved);
+  background: color-mix(in srgb, var(--status-resolved) 15%, transparent);
+}
+
+.service-status-badge-yellow {
+  color: var(--severity-medium);
+  background: color-mix(in srgb, var(--severity-medium) 15%, transparent);
+}
+
+.service-status-badge-red {
+  color: var(--severity-critical);
+  background: color-mix(in srgb, var(--severity-critical) 15%, transparent);
+}

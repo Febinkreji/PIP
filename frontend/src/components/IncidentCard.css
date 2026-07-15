@@ -1,0 +1,101 @@
+.incident-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  transition: border-color 0.15s ease;
+}
+
+.incident-card:hover {
+  border-color: var(--accent);
+}
+
+.incident-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.incident-card-id {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.incident-card-title {
+  font-size: 1rem;
+  margin: 0 0 8px;
+  color: var(--text-h);
+}
+
+.incident-card-summary {
+  font-size: 0.875rem;
+  color: var(--text);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.incident-card-progress {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.incident-card-progress-segment {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.incident-card-progress-completed {
+  background: var(--status-resolved);
+}
+
+.incident-card-progress-current {
+  background: var(--accent);
+}
+
+.incident-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.incident-card-footer:last-of-type {
+  margin-bottom: 16px;
+}
+
+.incident-card-service {
+  color: var(--text);
+}
+
+.incident-card-owner {
+  color: var(--text);
+}
+
+.incident-card-investigate {
+  align-self: flex-start;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.incident-card-investigate:hover {
+  background: var(--accent);
+  color: #06111f;
+}

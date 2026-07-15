@@ -1,0 +1,223 @@
+.workflow-progress {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 20px;
+}
+
+.workflow-progress-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.workflow-progress-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.workflow-progress-summary-item-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.workflow-progress-summary-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.workflow-progress-bar-track {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+  margin-bottom: 34px;
+}
+
+.workflow-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--status-resolved));
+  transition: width 0.6s ease;
+}
+
+.workflow-progress-track {
+  display: flex;
+  align-items: flex-start;
+}
+
+.workflow-progress-step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.workflow-progress-step:last-child {
+  flex: 0 0 auto;
+}
+
+.workflow-progress-connector {
+  height: 3px;
+  flex: 1;
+  background: var(--border);
+  margin: 0 4px;
+  transition: background 0.4s ease;
+}
+
+.workflow-progress-connector-filled {
+  background: var(--status-resolved);
+}
+
+.workflow-progress-node {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  position: relative;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.workflow-progress-node:hover {
+  border-color: var(--accent);
+}
+
+.workflow-progress-node-completed {
+  border-color: var(--status-resolved);
+  background: color-mix(in srgb, var(--status-resolved) 18%, transparent);
+  color: var(--status-resolved);
+}
+
+.workflow-progress-node-current {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.workflow-progress-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  animation: workflow-pulse 1.6s ease-out infinite;
+}
+
+@keyframes workflow-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.workflow-progress-node-future {
+  color: var(--text-muted);
+}
+
+.workflow-progress-label {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.workflow-progress-step:last-child .workflow-progress-label {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.workflow-progress-label-completed,
+.workflow-progress-label-current {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.workflow-progress-time {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.workflow-progress-step:last-child .workflow-progress-time {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.workflow-progress-notes {
+  margin-top: 56px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  animation: workflow-fade-in 0.2s ease;
+}
+
+.workflow-progress-notes-stage {
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.workflow-progress-notes-time {
+  color: var(--text-muted);
+}
+
+.workflow-progress-notes-comment {
+  color: var(--text);
+}
+
+@keyframes workflow-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .workflow-progress-track {
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .workflow-progress-step {
+    flex: 0 0 auto;
+    min-width: 70px;
+  }
+
+  .workflow-progress-connector {
+    width: 30px;
+    flex: 0 0 30px;
+  }
+}

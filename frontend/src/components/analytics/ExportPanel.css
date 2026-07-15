@@ -1,0 +1,34 @@
+.export-panel {
+  margin-bottom: 28px;
+}
+
+.export-panel-card {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.export-panel-card button {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 18px;
+  color: var(--text-h);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.export-panel-card button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media print {
+  .analytics-filters,
+  .export-panel {
+    display: none !important;
+  }
+}

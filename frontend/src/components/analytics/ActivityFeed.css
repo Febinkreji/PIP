@@ -1,0 +1,69 @@
+.activity-feed {
+  margin-bottom: 28px;
+}
+
+.activity-feed-card {
+  padding: 12px 20px;
+}
+
+.activity-feed-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.activity-feed-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.activity-feed-item:last-child {
+  border-bottom: none;
+}
+
+.activity-feed-icon {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.activity-feed-icon-critical {
+  border-color: color-mix(in srgb, var(--severity-critical) 50%, transparent);
+}
+
+.activity-feed-icon-accent {
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.activity-feed-icon-ai {
+  border-color: color-mix(in srgb, var(--ai-purple) 50%, transparent);
+}
+
+.activity-feed-icon-success {
+  border-color: color-mix(in srgb, var(--status-resolved) 50%, transparent);
+}
+
+.activity-feed-time {
+  flex: none;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  width: 52px;
+}
+
+.activity-feed-description {
+  color: var(--text-h);
+  font-size: 0.85rem;
+}

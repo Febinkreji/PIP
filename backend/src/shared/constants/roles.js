@@ -1,0 +1,4 @@
+const ROLES = ['ADMIN', 'ENGINEER', 'MANAGER', 'VIEWER']
+const WRITE_ROLES = ['ADMIN', 'ENGINEER', 'MANAGER']
+
+module.exports = { ROLES, WRITE_ROLES }

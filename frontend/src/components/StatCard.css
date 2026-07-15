@@ -1,0 +1,33 @@
+.stat-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  flex: 1 1 180px;
+}
+
+.stat-card-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-card-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.stat-card-success .stat-card-value {
+  color: var(--status-resolved);
+}
+
+.stat-card-critical .stat-card-value {
+  color: var(--severity-critical);
+}
+
+.stat-card-warning .stat-card-value {
+  color: var(--status-open);
+}

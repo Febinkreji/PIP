@@ -4,7 +4,7 @@ Guidance for Claude Code (and any contributor) working in this repository.
 
 ## Project Overview
 
-The Payment Incident Intelligence Platform is a system for tracking, analyzing, and surfacing insights about payment-related incidents. It combines a frontend dashboard, a backend API/service layer, and cloud infrastructure to help teams detect, investigate, and resolve payment incidents faster.
+PIP (Payment Incident Platform) is a system for tracking, analyzing, and surfacing insights about payment-related incidents. It combines a frontend dashboard, a backend API/service layer, and cloud infrastructure to help teams detect, investigate, and resolve payment incidents faster.
 
 ## Tech Stack
 

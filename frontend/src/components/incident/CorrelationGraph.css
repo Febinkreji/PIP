@@ -1,0 +1,181 @@
+.correlation-graph {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.correlation-graph-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.correlation-graph-header h2 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.correlation-graph-caption {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 46ch;
+  line-height: 1.5;
+}
+
+.correlation-graph-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.correlation-graph-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot-healthy { background: var(--status-resolved); }
+.legend-dot-warning { background: var(--severity-medium); }
+.legend-dot-critical { background: var(--severity-critical); }
+
+.correlation-graph-summary {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.correlation-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.correlation-graph-canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1060 / 440;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.correlation-graph-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.correlation-edge {
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.correlation-edge-failed {
+  stroke: var(--severity-critical);
+  stroke-width: 2;
+  opacity: 0.75;
+}
+
+.correlation-node {
+  cursor: pointer;
+}
+
+.correlation-node-dot {
+  fill: var(--bg-elevated);
+  stroke-width: 2;
+  transition: r 0.15s ease;
+}
+
+.correlation-node-healthy .correlation-node-dot { stroke: var(--status-resolved); }
+.correlation-node-warning .correlation-node-dot { stroke: var(--severity-medium); }
+.correlation-node-critical .correlation-node-dot { stroke: var(--severity-critical); }
+
+.correlation-node-healthy .correlation-node-dot { fill: color-mix(in srgb, var(--status-resolved) 16%, var(--bg-elevated)); }
+.correlation-node-warning .correlation-node-dot { fill: color-mix(in srgb, var(--severity-medium) 18%, var(--bg-elevated)); }
+.correlation-node-critical .correlation-node-dot { fill: color-mix(in srgb, var(--severity-critical) 22%, var(--bg-elevated)); }
+
+.correlation-node-hovered .correlation-node-dot {
+  r: 15;
+}
+
+.correlation-node-ring {
+  fill: none;
+  stroke: var(--severity-critical);
+  stroke-width: 1.5;
+  opacity: 0.55;
+}
+
+.correlation-node-tag {
+  text-anchor: middle;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  fill: var(--severity-critical);
+}
+
+.correlation-node-label {
+  text-anchor: middle;
+  font-size: 10.5px;
+  font-weight: 600;
+  fill: var(--text-h);
+}
+
+.correlation-tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 18px));
+  min-width: 168px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.75rem;
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.correlation-tooltip strong {
+  color: var(--text-h);
+  font-size: 0.82rem;
+  margin-bottom: 2px;
+}
+
+.correlation-tooltip.align-left { transform: translate(0, calc(-100% - 18px)); }
+.correlation-tooltip.align-right { transform: translate(-100%, calc(-100% - 18px)); }
+
+.correlation-tooltip.valign-below.align-center { transform: translate(-50%, 18px); }
+.correlation-tooltip.valign-below.align-left { transform: translate(0, 18px); }
+.correlation-tooltip.valign-below.align-right { transform: translate(-100%, 18px); }
+
+@media (max-width: 720px) {
+  .correlation-node-label {
+    font-size: 9px;
+  }
+}

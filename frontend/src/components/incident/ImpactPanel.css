@@ -1,0 +1,56 @@
+.impact-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.impact-panel h2 {
+  margin-bottom: 16px;
+}
+
+.impact-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.impact-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.impact-stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.impact-stat-critical .impact-stat-value { color: var(--severity-critical); }
+.impact-stat-warning .impact-stat-value { color: var(--severity-high); }
+.impact-stat-medium .impact-stat-value { color: var(--severity-medium); }
+
+.impact-chip-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.impact-chip-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.impact-chip-empty {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

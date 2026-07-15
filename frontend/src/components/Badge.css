@@ -1,0 +1,65 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge-severity-critical {
+  color: var(--severity-critical);
+  background: color-mix(in srgb, var(--severity-critical) 15%, transparent);
+}
+
+.badge-severity-high {
+  color: var(--severity-high);
+  background: color-mix(in srgb, var(--severity-high) 15%, transparent);
+}
+
+.badge-severity-medium {
+  color: var(--severity-medium);
+  background: color-mix(in srgb, var(--severity-medium) 15%, transparent);
+}
+
+.badge-severity-low {
+  color: var(--severity-low);
+  background: color-mix(in srgb, var(--severity-low) 15%, transparent);
+}
+
+.badge-status-open {
+  color: var(--status-open);
+  background: color-mix(in srgb, var(--status-open) 15%, transparent);
+}
+
+.badge-status-triaged {
+  color: var(--status-triaged);
+  background: color-mix(in srgb, var(--status-triaged) 15%, transparent);
+}
+
+.badge-status-investigating {
+  color: var(--status-investigating);
+  background: color-mix(in srgb, var(--status-investigating) 15%, transparent);
+}
+
+.badge-status-mitigating {
+  color: var(--status-mitigating);
+  background: color-mix(in srgb, var(--status-mitigating) 15%, transparent);
+}
+
+.badge-status-monitoring {
+  color: var(--status-monitoring);
+  background: color-mix(in srgb, var(--status-monitoring) 15%, transparent);
+}
+
+.badge-status-resolved {
+  color: var(--status-resolved);
+  background: color-mix(in srgb, var(--status-resolved) 15%, transparent);
+}
+
+.badge-status-postmortem {
+  color: var(--status-postmortem);
+  background: color-mix(in srgb, var(--status-postmortem) 15%, transparent);
+}

@@ -1,0 +1,212 @@
+.workflow-actions {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: flex-start;
+  position: sticky;
+  top: 20px;
+}
+
+.workflow-actions-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.workflow-actions-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.8rem;
+}
+
+.workflow-actions-summary-row .meta-label {
+  margin-bottom: 0;
+}
+
+.workflow-actions-summary-row > span:last-child {
+  color: var(--text-h);
+  font-weight: 600;
+  text-align: right;
+}
+
+.workflow-actions-breached {
+  color: var(--severity-critical) !important;
+}
+
+.workflow-actions-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.workflow-actions-secondary-button {
+  background: color-mix(in srgb, var(--severity-high) 12%, transparent);
+  color: var(--severity-high);
+  border: 1px solid var(--severity-high);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+}
+
+.workflow-actions-secondary-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.workflow-actions-note-field {
+  display: flex;
+  gap: 6px;
+}
+
+.workflow-actions-note-field input {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: var(--text-h);
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.workflow-actions-note-field input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.workflow-actions-note-field button {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+}
+
+.workflow-actions-note-field button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.workflow-actions-readonly {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.workflow-actions-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.workflow-actions-field label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.workflow-actions-field input,
+.workflow-actions-field textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: var(--text-h);
+  font: inherit;
+  font-size: 0.85rem;
+  resize: vertical;
+}
+
+.workflow-actions-field input:focus,
+.workflow-actions-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.workflow-actions-field input:disabled,
+.workflow-actions-field textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.workflow-actions-error {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--severity-critical);
+}
+
+.workflow-actions-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.workflow-actions-button {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.workflow-actions-button:not(:disabled):hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.workflow-actions-button:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.workflow-actions-button-primary:not(:disabled) {
+  color: var(--status-resolved);
+  border-color: var(--status-resolved);
+  background: color-mix(in srgb, var(--status-resolved) 15%, transparent);
+}
+
+.workflow-actions-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 960px) {
+  .workflow-actions {
+    position: static;
+  }
+}
