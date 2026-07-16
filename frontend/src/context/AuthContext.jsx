@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
-import { auth, firebaseConfigured } from '../firebase'
+import { signInWithEmailAndPassword, signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth'
+import { auth, firebaseConfigured, googleProvider } from '../firebase'
 
 const AuthContext = createContext(null)
 
@@ -34,11 +34,19 @@ export function AuthProvider({ children }) {
     return signInWithEmailAndPassword(auth, email, password)
   }
 
+  // Popup-only — on success this resolves and the onAuthStateChanged
+  // listener above (already subscribed) picks up the new user and role
+  // claim exactly as it does for email/password sign-in. No separate
+  // authentication flow, no manual backend call.
+  function loginWithGoogle() {
+    return signInWithPopup(auth, googleProvider)
+  }
+
   function logout() {
     return signOut(auth)
   }
 
-  const value = { user, role, loading, login, logout, firebaseConfigured }
+  const value = { user, role, loading, login, loginWithGoogle, logout, firebaseConfigured }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

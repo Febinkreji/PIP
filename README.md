@@ -90,6 +90,8 @@ node scripts/setupRoles.js someone@example.com ENGINEER
 
 Re-run this script after switching Firebase projects — custom claims are project-scoped and never carry over.
 
+**Google Sign-In users:** signing in with Google (see the login page) creates a Firebase Auth user the same way email/password sign-up does, but with no role assigned. Until an administrator runs `node scripts/setupRoles.js someone@example.com SOME_ROLE` for that account, the user sees "Your account has been authenticated successfully but has not yet been assigned a platform role." after signing in. Google Sign-In must also be enabled once in the Firebase console under **Authentication → Sign-in method → Google**.
+
 ### 5. Seed demo data
 
 ```bash

@@ -35,7 +35,7 @@ This app uses `react-router-dom` with browser history routing (`/incidents/:id`,
 
 ## 4. Firebase Authentication — authorized domains
 
-In the Firebase console: **Authentication → Settings → Authorized domains**, add your Vercel domain (e.g. `pip-app.vercel.app` and any custom domain). Without this, `signInWithEmailAndPassword` will fail on the deployed site even though it works locally.
+In the Firebase console: **Authentication → Settings → Authorized domains**, add your Vercel domain (e.g. `pip-app.vercel.app` and any custom domain). Without this, `signInWithEmailAndPassword` — and Google Sign-In's `signInWithPopup` — will fail on the deployed site even though it works locally. Google Sign-In additionally requires the **Google** provider to be enabled once under **Authentication → Sign-in method**.
 
 ## 5. Deploy
 
