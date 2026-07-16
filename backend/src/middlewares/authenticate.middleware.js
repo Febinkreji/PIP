@@ -12,10 +12,17 @@ async function authenticate(req, res, next) {
   try {
     const decodedToken = await getAuth().verifyIdToken(idToken)
 
+    // DEMO FALLBACK — remove once every account has a real role assigned via
+    // backend/scripts/setupRoles.js. An authenticated user with no `role`
+    // custom claim (e.g. a first-time Google sign-in) is treated as a
+    // read-only VIEWER for this request only: no custom claim is ever set,
+    // nothing is written to Firestore, and requireRole(...) below still
+    // rejects VIEWER from every write/admin endpoint exactly as it does for
+    // a real VIEWER account.
     req.user = {
       uid: decodedToken.uid,
       email: decodedToken.email,
-      role: decodedToken.role || null,
+      role: decodedToken.role || 'VIEWER',
     }
 
     next()

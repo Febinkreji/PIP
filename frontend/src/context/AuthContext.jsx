@@ -19,7 +19,13 @@ export function AuthProvider({ children }) {
       if (firebaseUser) {
         const tokenResult = await firebaseUser.getIdTokenResult(true)
         setUser(firebaseUser)
-        setRole(tokenResult.claims.role || null)
+        // DEMO FALLBACK — mirrors backend/src/middlewares/authenticate.middleware.js.
+        // An authenticated user with no role custom claim (e.g. a first-time
+        // Google sign-in) is shown the app as a read-only VIEWER instead of
+        // ProtectedRoute's "no role assigned" message. No claim is set, no
+        // write happens; remove this fallback once every account has a real
+        // role assigned via backend/scripts/setupRoles.js.
+        setRole(tokenResult.claims.role || 'VIEWER')
       } else {
         setUser(null)
         setRole(null)
